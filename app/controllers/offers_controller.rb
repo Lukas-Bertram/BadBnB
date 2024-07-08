@@ -1,4 +1,6 @@
 class OffersController < ApplicationController
+  # before_action :set_offer, only: :show
+
   def index
     @offers = Offer.all
   end
@@ -9,8 +11,16 @@ class OffersController < ApplicationController
 
   def create
     @offer = Offer.new(offer_params)
-    @offer.save
-    redirect_to offer_path(set_offer)
+    @offer.user = current_user
+    if @offer.save
+      redirect_to offer_path(@offer)
+    else
+      render :new
+    end
+  end
+
+  def show
+    @offer = Offer.find(set_offer)
   end
 
   private
@@ -20,6 +30,6 @@ class OffersController < ApplicationController
   end
 
   def offer_params
-    params.require(:offers).permit(:name, :description, :address)
+    params.require(:offer).permit(:name, :description, :address)
   end
 end
