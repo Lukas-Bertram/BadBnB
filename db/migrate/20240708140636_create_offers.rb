@@ -4,7 +4,7 @@ class CreateOffers < ActiveRecord::Migration[7.1]
       t.string :name
       t.text :description
       t.string :address
-      t.boolean :availability, default: true
+      t.boolean :availability
       t.references :user, null: false, foreign_key: true
 
       t.timestamps
