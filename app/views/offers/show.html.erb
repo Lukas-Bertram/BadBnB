@@ -1,3 +1,11 @@
-<h2><%= @offer.name %></h2>
-<p><%= @offer.description %></p>
-<p><%= @offer.availability %></p>
+<div class="show">
+  <h1><%= @offer.name %></h1>
+  <p><%= @offer.description %></p>
+  <p><%= @offer.availability %></p>
+  <%= link_to "Delete", offers_path,
+  data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+  class: "turbo-link"  # (Optional for styling)
+%>
+  <button class="btn btn-primary">Update</button>
+  <button button class="btn btn-primary">Delete</button>
+</div>

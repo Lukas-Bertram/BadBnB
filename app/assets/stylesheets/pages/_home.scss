@@ -8,7 +8,8 @@
   align-items: center;
 }
 
-.cont {margin-top: 5%;
+.cont {
+  margin-top: 5%;
   background: rgb(255,255,255);
   background: radial-gradient(circle, rgba(255,255,255,0.4807692307692307) 0%, rgba(153,153,153,0.8337928921568627) 33%, rgba(0,0,0,0.7693671218487395) 100%);
   width: 85vw;
@@ -72,4 +73,10 @@ form {
   padding-right: 30px;
   transition: 1s ease;
   border-radius: 5px;
+}
+
+.show h1 {
+  font-family: "Honk", system-ui;
+  font-size: 70px;
+  text-shadow: 2px 2px 10px #000;
 }
