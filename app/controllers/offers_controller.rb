@@ -21,6 +21,9 @@ class OffersController < ApplicationController
   end
 
   def show
+
+    @offer = Offer.find(params[:id])
+
   end
 
   def edit
@@ -33,6 +36,7 @@ class OffersController < ApplicationController
     else
       render :edit
     end
+
   end
 
   private
