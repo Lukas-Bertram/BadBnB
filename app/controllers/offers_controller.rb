@@ -21,22 +21,19 @@ class OffersController < ApplicationController
   end
 
   def show
-
     @offer = Offer.find(params[:id])
-
   end
 
   def edit
   end
 
   def update
-    @offer = Offer.edit(offer_params)
+    @offer.update(offer_params)
     if @offer.save
       redirect_to offer_path(@offer)
     else
       render :edit
     end
-
   end
 
   private
