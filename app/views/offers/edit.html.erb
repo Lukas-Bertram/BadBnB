@@ -1,0 +1,8 @@
+<h2>Does your bad place need some change?</h2>
+
+<%= simple_form_for [@offer/:id] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :address %>
+  <%= f.submit "Update change", class: "btn btn-primary" %>
+<% end %>
