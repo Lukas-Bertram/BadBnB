@@ -28,8 +28,9 @@ class OffersController < ApplicationController
   end
 
   def destroy
+    @offer = Offer.find(params[:id])
     @offer.destroy
-    redirect_to offers_path
+    redirect_to offers_path, status: :see_other
   end
 
   def update
