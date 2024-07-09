@@ -7,3 +7,13 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+
+
+Offer.create!(
+  name: "Offer 1",
+  description: "This is a description for Offer 1.",
+  address: "123 Main St, City, Country",
+  availability: true,
+  user_id: 1
+)
