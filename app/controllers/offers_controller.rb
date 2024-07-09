@@ -20,7 +20,7 @@ class OffersController < ApplicationController
   end
 
   def show
-    @offer = Offer.find(set_offer)
+    @offer = Offer.find(params[:id])
   end
 
   private
