@@ -1,0 +1,8 @@
+<h2>Create a new place to stay!</h2>
+
+<%= simple_form_for [@offer] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :address %>
+  <%= f.submit "Create offer!", class: "btn btn-primary" %>
+<% end %>
