@@ -1,1 +1,35 @@
 // Specific CSS for your home-page
+.fatherdiv {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+}
+
+.container {
+  background: rgb(10,59,108);
+  background: linear-gradient(47deg, rgba(10,59,108,1) 0%, rgba(117,147,91,1) 100%);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+h1 {
+  color: #fff;
+  font-size: 55px;
+  text-shadow: #fff 1px 0 10px;
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10%;
+  width: 50%;
+}
+
+.right-side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
