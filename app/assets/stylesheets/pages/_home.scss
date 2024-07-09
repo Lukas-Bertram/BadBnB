@@ -1,35 +1,73 @@
-// Specific CSS for your home-page
-.fatherdiv {
-  width: 100%;
-  height: 100%;
-  background-color: #000;
-}
-
-.container {
-  background: rgb(10,59,108);
-  background: linear-gradient(47deg, rgba(10,59,108,1) 0%, rgba(117,147,91,1) 100%);
-  width: 100vw;
-  height: 100vh;
+.body {
+  background: url("../../../views/pages/backgrounds/berlin_black.webp");
+  background-color: lightgray;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-h1 {
+.cont {margin-top: 5%;
+  background: rgb(255,255,255);
+  background: radial-gradient(circle, rgba(255,255,255,0.4807692307692307) 0%, rgba(153,153,153,0.8337928921568627) 33%, rgba(0,0,0,0.7693671218487395) 100%);
+  width: 85vw;
+  height: 85vh;
+  border-radius: 10px;
+  display: flex;
+  margin-bottom: 5%;
+}
+
+.left-scard {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   color: #fff;
-  font-size: 55px;
-  text-shadow: #fff 1px 0 10px;
+  align-items: center;
+  justify-content: center;
 }
 
-.left-side {
+.left-scard h1 {
+  font-family: "Honk", system-ui;
+  font-size: 100px;
+  text-shadow: 2px 2px 10px #000;
+}
+
+h3 {
+  font-family: "Bungee", sans-serif;
+  text-shadow: 1px 1px 10px #fff;
+}
+
+.right-scard {
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 10%;
-  width: 50%;
 }
 
-.right-side {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+form {
+  font-family: "Bungee", sans-serif;
+  color: white;
+}
+
+.btn {
+  background: rgb(255,255,127);
+  background: linear-gradient(180deg,
+  rgba(255,255,127,1) 0%, rgba(253,104,77,1) 50%, rgba(251,28,160,1) 100%);
+  border-color: #000;
+  color: #000;
+  box-shadow: 2px 2px 5px #000;
+  padding: 10px;
+  margin-bottom: 2rem;
+  font-family: "Bungee", sans-serif;
+  text-shadow: 1px 1px 10px #fff;
+}
+
+.btn:hover {
+  padding-left: 30px;
+  padding-right: 30px;
+  transition: 1s ease;
+  border-radius: 5px;
 }
