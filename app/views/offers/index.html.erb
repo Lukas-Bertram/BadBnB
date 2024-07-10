@@ -1,13 +1,13 @@
 <div class="index">
-  <div class="internal-card">
-    <h1 class="text-dark">These are the ugliest hotels for you</h1>
-
-<ul>
-  <% @offers.each do |offer| %>
-  <li><%= link_to offer.name, offer_path(offer) %></li>
-  <% end %>
-</ul>
-
+  <div class="banner">
+    <h1>Our Horrible Experiences</h1>
   </div>
-
 </div>
+
+<div class="cards">
+    <ul class="cards-ul">
+      <% @offers.each do |offer| %>
+      <li><%= link_to offer.name, offer_path(offer) %></li>
+      <% end %>
+    </ul>
+  </div>
