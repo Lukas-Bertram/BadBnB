@@ -1,10 +1,10 @@
 class BookingsController < ApplicationController
+  def index
 
-  def show
-    @booking = Booking.find(booking_params)
   end
 
-  private
+  def new
+  end
 
   def booking_params
     require.params(:booking).permit(:check_in, :ckeck_out)
