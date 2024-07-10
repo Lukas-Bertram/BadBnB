@@ -3,7 +3,11 @@ class OffersController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @offers = Offer.all
+    if params[:query].present?
+      @offers = Offer.where("name LIKE ?", "%#{params[:query]}%")
+    else
+      @offers = Offer.all
+    end
   end
 
   def new
@@ -34,13 +38,12 @@ class OffersController < ApplicationController
   end
 
   def update
-    @offer = Offer.edit(offer_params)
+    @offer.update(offer_params)
     if @offer.save
       redirect_to offer_path(@offer)
     else
       render :edit
     end
-
   end
 
   private
