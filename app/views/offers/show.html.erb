@@ -1,3 +1,6 @@
+
+<%= link_to "Book now!", new_offer_booking_path(@offer) %>
+  <div class="show">
   <h1><%= @offer.name %></h1>
   <p><%= @offer.description %></p>
   <p><%= @offer.address %></p>
@@ -10,3 +13,5 @@
     <%= link_to "Update",
     edit_offer_path(@offer)%>
   <% end %>
+  </div>
+<% end %>

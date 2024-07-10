@@ -1,9 +1,13 @@
 class OffersController < ApplicationController
-  before_action :set_offer, only: [:show, :edit, :update]
+  before_action :set_offer, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @offers = Offer.all
+    if params[:query].present?
+      @offers = Offer.where("name LIKE ?", "%#{params[:query]}%")
+    else
+      @offers = Offer.all
+    end
   end
 
   def new
@@ -24,6 +28,12 @@ class OffersController < ApplicationController
   end
 
   def edit
+  end
+
+  def destroy
+    @offer = Offer.find(params[:id])
+    @offer.destroy
+    redirect_to offers_path, status: :see_other
   end
 
   def update

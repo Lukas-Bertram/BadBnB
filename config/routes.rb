@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  resources :offers, only: %i[index new create show edit update] do
+  resources :offers, only: %i[index new create show edit update destroy] do
     resources :bookings
   end
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
