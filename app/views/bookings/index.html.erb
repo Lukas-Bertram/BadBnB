@@ -1,0 +1,11 @@
+<h1>All the bookings</h1>
+
+<div>
+<h2>My bad bookings</h2>
+<ul>
+  <% @offer.bookings.each do |booking| %>
+    <li><%= booking.check_in %></li>
+    <li><%= booking.check_out %></li>
+  <% end %>
+</ul>
+</div>
