@@ -1,10 +1,14 @@
-
+  <div class="show">
   <h1><%= @offer.name %></h1>
   <p><%= @offer.description %></p>
+  <p><%= @offer.address %></p>
   <p><%= @offer.availability %></p>
+
+<% if @offer.user == current_user %>
   <%= link_to "Delete",
   offer_path(@offer),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
-  <button class="btn btn-primary">Update</button>
-  <button button class="btn btn-primary">Delete</button>
+  data: {turbo_method: :delete, turbo_confirm: "This offer is horrible. Are you sure that you want to delete?"}%>
+  <%= link_to "Update",
+  edit_offer_path(@offer)%>
+<% end %>
+</div>

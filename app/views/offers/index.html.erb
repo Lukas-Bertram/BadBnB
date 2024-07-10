@@ -1,7 +1,13 @@
-<h1 class="text-dark">These are the ugliest hotels for you</h1>
+<div class="index">
+  <div class="internal-card">
+    <h1 class="text-dark">These are the ugliest hotels for you</h1>
 
 <ul>
   <% @offers.each do |offer| %>
-  <li> <%= offer.name  %></li>
+  <li><%= link_to offer.name, offer_path(offer) %></li>
   <% end %>
 </ul>
+
+  </div>
+
+</div>
