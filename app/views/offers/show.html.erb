@@ -1,3 +1,9 @@
+
+<h2><%= @offer.name %></h2>
+<p><%= @offer.description %></p>
+<p><%= @offer.availability %></p>
+
+<%= link_to "Book now!", new_offer_booking_path(@offer) %>
   <div class="show">
   <h1><%= @offer.name %></h1>
   <p><%= @offer.description %></p>
@@ -12,3 +18,4 @@
   edit_offer_path(@offer)%>
 <% end %>
 </div>
+

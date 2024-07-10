@@ -1,0 +1,13 @@
+<h1>Book <%= @offer.name %></h1>
+
+<div class="new-booking">
+  <%= simple_form_for [@offer, @booking] do |f| %>
+    <h3>When would you like to check in?</h3>
+    <%= f.input :check_in, as: :string, input_html: { data: { controller: "datepicker" }} %>
+    <h3>When would you like to check out?</h3>
+    <%= f.input :check_out, as: :string, input_html: { data: { controller: "datepicker" }} %>
+    <%= f.submit "Book now!", class: "btn btn-primary" %>
+    <% end %>
+</div>
+
+ <%# use flatpickr gem!! %>
