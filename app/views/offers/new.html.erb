@@ -1,8 +1,13 @@
-<h2>Create a new place to stay!</h2>
+<h1>Create a new place to stay!</h1>
 
-<%= simple_form_for [@offer] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :address %>
-  <%= f.submit "Create offer!", class: "btn btn-primary" %>
-<% end %>
+<div class="new-offer">
+  <%= simple_form_for [@offer] do |f| %>
+    <h3>Give your place a title:</h3>
+    <%= f.input :name%>
+    <h3>Let your guests know, how bad your place really is:</h3>
+    <%= f.input :description %>
+    <h3>Where can your guests find your place?</h3>
+    <%= f.input :address %>
+    <%= f.submit "Create offer!", class: "btn btn-primary" %>
+    <% end %>
+</div>
