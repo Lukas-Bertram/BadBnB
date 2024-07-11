@@ -1,11 +1,20 @@
+<div class="show">
+  <h1><%= @offer.name %></h1>
+  <%= cl_image_tag @offer.image_url.key, height: 300, width: 400, crop: :fill %>
+  <p><%= @offer.description %></p>
+  <p><%= @offer.address %></p>
+  <% if @offer.availability == true %>
+    <p><%= @offer.name %> is available!</p>
+  <% else %>
+    <p><%= @offer.name %> is currently not available</p>
+  <% end %>
 
-<h1><%= @offer.name %></h1>
-<%= cl_image_tag @offer.image_url.key, height: 300, width: 400, crop: :fill %>
-<p><%= @offer.description %></p>
-<p><%= @offer.address %></p>
-<p><%= @offer.availability %></p>
+  <button class="btn">
+    <%= link_to "Book now!", new_offer_booking_path(@offer) %>
+  </button>
 
-<%= link_to "Book now!", new_offer_booking_path(@offer) %>
+</div>
+
 
   <div class="show">
     <% if @offer.user == current_user %>
@@ -16,4 +25,3 @@
       edit_offer_path(@offer)%>
     <% end %>
   </div>
-

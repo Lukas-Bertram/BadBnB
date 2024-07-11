@@ -53,6 +53,16 @@ form {
   color: white;
 }
 
+form input {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-new h1 {
+  font-family: "Honk", system-ui;
+  font-size: 50px;
+  text-shadow: 2px 2px 10px #000;
+}
+
 .btn {
   background: rgb(255,255,127);
   background: linear-gradient(180deg,
