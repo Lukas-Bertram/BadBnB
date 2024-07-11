@@ -4,7 +4,7 @@ class OffersController < ApplicationController
 
   def index
     if params[:query].present?
-      @offers = Offer.where("name LIKE ?", "%#{params[:query]}%")
+      @offers = Offer.where("name ILIKE ?", "%#{params[:query]}%")
     else
       @offers = Offer.all
     end
@@ -52,6 +52,6 @@ class OffersController < ApplicationController
   end
 
   def offer_params
-    params.require(:offer).permit(:name, :description, :address)
+    params.require(:offer).permit(:name, :description, :address, :price, :photo, :image_url)
   end
 end
