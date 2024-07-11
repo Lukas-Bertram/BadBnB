@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
     @booking.offer = @offer
     @booking.user = current_user
     if @booking.save
-      redirect_to pages_path
+      redirect_to pages_path, notice: 'Booking was successful!'
     else
       render :new
     end
@@ -22,7 +22,7 @@ class BookingsController < ApplicationController
 
   def show
   end
-  
+
   private
 
   def set_offer
