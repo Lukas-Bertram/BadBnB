@@ -7,7 +7,9 @@
 <div class="cards">
     <ul class="cards-ul">
       <% @offers.each do |offer| %>
-      <li><%= link_to offer.name, offer_path(offer) %></li>
+      <div class="card-model">
+        <li><%= link_to offer.name, offer_path(offer), {:style =>'text-decoration:none;'} %></li>
+      </div>
       <% end %>
     </ul>
   </div>
