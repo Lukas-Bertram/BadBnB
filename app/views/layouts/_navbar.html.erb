@@ -13,12 +13,16 @@
         <li class="nav-item">
           <a class="nav-link" href="/offers">Find a horrible Place!</a>
         </li>
+        <% if !current_user %>
           <li class="nav-item">
-          <a class="nav-link" href="/users/sign_up" tabindex="-1" aria-disabled="true">Login</a>
-        </li>
-        <li class="nav-item">
-          <%= button_to "Logout", destroy_user_session_path, method: :delete  %>
-        </li>
+            <a class="nav-link" href="/users/sign_in" tabindex="-1" aria-disabled="true">Login</a>
+          </li>
+        <% end %>
+        <% if current_user %>
+          <li class="nav-item" >
+            <%= button_to "Logout", destroy_user_session_path, method: :delete %>
+          </li>
+        <% end %>
         <li class="nav-item">
           <a class="nav-link" href="/contact" tabindex="-1" aria-disabled="true">Contact Us</a>
         </li>
