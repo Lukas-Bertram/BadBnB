@@ -20,7 +20,7 @@
         <% end %>
         <% if current_user %>
           <li class="nav-item" >
-            <%= button_to "Logout", destroy_user_session_path, method: :delete %>
+            <%= link_to "Logout", destroy_user_session_path, class: "logout" %>
           </li>
         <% end %>
         <li class="nav-item">
