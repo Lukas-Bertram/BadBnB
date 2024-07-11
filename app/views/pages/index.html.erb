@@ -1,0 +1,33 @@
+
+<h1>My Booked Offers</h1>
+
+<h2>Offers I Made and Were Booked by Others</h2>
+<% if @my_offers_booked_by_others.any? %>
+  <ul>
+    <% @my_offers_booked_by_others.each do |offer| %>
+      <li>
+        <%= offer.name %>
+         - Booked by:
+        <ul>
+          <% offer.bookings.each do |booking| %>
+            <li><%= booking.user.email %> from <%= booking.check_in.strftime("%B %d, %Y") %>
+            to <%= booking.check_out.strftime("%B %d, %Y") %></li>
+          <% end %>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No one is interested in your bad experience yet</p>
+<% end %>
+
+<h2>Offers I Booked</h2>
+<% if @my_booked_offers.any? %>
+  <ul>
+    <% @my_booked_offers.each do |offer| %>
+      <li><%= offer.name %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>You are not interested in any bad experience yet.</p>
+<% end %>
