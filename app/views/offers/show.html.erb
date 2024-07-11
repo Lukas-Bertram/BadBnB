@@ -1,7 +1,8 @@
 <div class="show">
+  <div class="card-show">
   <h1><%= @offer.name %></h1>
     <% if @offer.image_url && @offer.image_url.key %>
-    <%= cl_image_tag @offer.image_url.key, height: 300, width: 400, crop: :fill %>
+    <%= cl_image_tag @offer.image_url.key, class: "card-image", crop: :fill %>
   <% else %>
     <%= image_tag "train.jpg", alt: "train", width: 200 %>
   <% end %>
@@ -16,9 +17,9 @@
   <button class="btn">
     <%= link_to "Book now!", new_offer_booking_path(@offer) %>
   </button>
-</div>
 
-<div class="show">
+
+  <div class="owner-show">
     <% if @offer.user == current_user %>
       <%= link_to "Delete",
       offer_path(@offer),
@@ -26,4 +27,6 @@
       <%= link_to "Update",
       edit_offer_path(@offer)%>
     <% end %>
+  </div>
+  </div>
 </div>
