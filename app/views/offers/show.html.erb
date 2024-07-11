@@ -1,5 +1,6 @@
 
 <h1><%= @offer.name %></h1>
+<%= cl_image_tag @offer.image_url.key, height: 300, width: 400, crop: :fill %>
 <p><%= @offer.description %></p>
 <p><%= @offer.address %></p>
 <p><%= @offer.availability %></p>
@@ -15,4 +16,3 @@
       edit_offer_path(@offer)%>
     <% end %>
   </div>
- http://[::1]:3000
