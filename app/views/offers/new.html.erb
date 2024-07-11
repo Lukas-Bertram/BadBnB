@@ -1,12 +1,14 @@
-<h1>Create a new place to stay!</h1>
+<div class="form-new p-5">
+  <h1>Create a new place to stay!</h1>
 
-<div class="new-offer">
-  <%= simple_form_for [@offer] do |f| %>
-    <%= f.input :name, { class: "label-dark" }%>
-    <%= f.input :description %>
-    <%= f.input :address %>
-    <%= f.input :price %>
-    <%= f.input :image_url, as: :file %>
-    <%= f.submit "Create offer!", class: "btn btn-primary" %>
-    <% end %>
+  <div class="new-offer">
+    <%= simple_form_for [@offer] do |f| %>
+      <%= f.input :name, { class: "label-dark" }%>
+      <%= f.input :description %>
+      <%= f.input :address %>
+      <%= f.input :price %>
+      <%= f.input :image_url, as: :file %>
+      <%= f.submit "Create offer!", class: "btn btn-primary" %>
+      <% end %>
+  </div>
 </div>
