@@ -22,7 +22,7 @@ class BookingsController < ApplicationController
 
   def show
   end
-
+  
   private
 
   def set_offer
@@ -30,6 +30,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:check_in, :check_out)
+    params.require(:booking).permit(:offer_id, :check_in, :check_out)
   end
 end

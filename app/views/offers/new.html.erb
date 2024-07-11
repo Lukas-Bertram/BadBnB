@@ -8,6 +8,8 @@
     <%= f.input :description %>
     <h3>Where can your guests find your place?</h3>
     <%= f.input :address %>
+    <%= f.input :price %>
+    <%= f.input :image_url, as: :file %>
     <%= f.submit "Create offer!", class: "btn btn-primary" %>
     <% end %>
 </div>
