@@ -3,7 +3,7 @@
     <% if @offer.image_url && @offer.image_url.key %>
     <%= cl_image_tag @offer.image_url.key, height: 300, width: 400, crop: :fill %>
   <% else %>
-    <p>No image available</p>
+    <%= image_tag "train.jpg", alt: "train", width: 200 %>
   <% end %>
   <p><%= @offer.description %></p>
   <p><%= @offer.address %></p>
