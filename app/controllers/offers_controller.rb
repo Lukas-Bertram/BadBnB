@@ -18,10 +18,10 @@ class OffersController < ApplicationController
     @offer = Offer.new(offer_params)
     @offer.user = current_user
 
-    if params[:offer][:image_url].present?
-      uploaded_file = params[:offer][:image_url]
+    if params[:offer][:photo].present?
+      uploaded_file = params[:offer][:photo]
       cloudinary_file = Cloudinary::Uploader.upload(uploaded_file.path)
-      @offer.image_url = cloudinary_file['url']
+      @offer.photo = cloudinary_file['url']
     end
 
     if @offer.save

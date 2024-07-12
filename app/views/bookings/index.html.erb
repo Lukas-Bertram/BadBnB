@@ -14,8 +14,8 @@
               <li>
                 <h3 class="card-name"><%= offer.name %></h3>
                 <div>
-                  <% if offer.image_url.attached? %>
-                  <%= cl_image_tag offer.image_url.key, class: "card-image", height: 110,  crop: :fill %>
+                  <% if offer.photo.attached? %>
+                  <%= cl_image_tag offer.photo.key, class: "card-image", height: 110,  crop: :fill %>
                   <% else %>
                   <%= image_tag "train.jpg", alt: "train", width: 200 %>
                   <% end %>
@@ -47,8 +47,8 @@
           <div class="card-model">
             <li><h3 class="card-name"><%= offer.name %></h3>
             <div>
-              <% if offer.image_url.attached? %>
-              <%= cl_image_tag offer.image_url.key, class: "card-image", height: 110,  crop: :fill %>
+              <% if offer.photo.attached? %>
+              <%= cl_image_tag offer.photo.key, class: "card-image", height: 110,  crop: :fill %>
               <% else %>
               <%= image_tag "train.jpg", alt: "train", width: 200 %>
               <% end %>
