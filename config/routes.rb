@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :offers, only: %i[index new create show edit update destroy] do
-    resources :bookings
+    resources :bookings, only: %i[new create]
   end
-  resources :pages
+  resources :bookings, only: %i[index]
 
   resources :contacts, only: :index
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
