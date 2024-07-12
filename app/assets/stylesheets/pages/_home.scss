@@ -191,6 +191,7 @@ form input {
 .grid-column {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 10px;
 }
 
@@ -254,11 +255,19 @@ form input {
   padding: 5px;
 }
 
+.card-name-pink {
+  color: rgba(251,26,159,0.5662640056022409) ;
+  text-decoration: none;
+  font-size: 24px;
+  text-shadow: 1px 1px 2px #000;
+  padding: 5px;
+}
 
 .card-text {
+  font-family: "Bungee", sans-serif;
   color: #fff;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 10px;
   text-shadow: 1px 1px 2px #000;
   padding: 5px;
 }
@@ -384,7 +393,7 @@ li {
   font-weight: 100;
   text-decoration: none;
   margin-right: 10px;
-
+  padding-bottom: 10px;
 }
 
 .show-delete:hover {
@@ -402,4 +411,17 @@ li {
   width: 600px;
   min-height: 600px !important;
   border: 2px solid red;
+} 
+ 
+.nav li {
+  font-family: "Bungee", sans-serif;
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+}
+
+footer h3 {
+  margin-left: 40px;
 }
