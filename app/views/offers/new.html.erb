@@ -2,7 +2,7 @@
   <h1>Create a new place to stay!</h1>
 
   <div class="new-offer">
-    <%= simple_form_for [@offer] do |f| %>
+    <%= simple_form_for @offer, html: { multipart: true } do |f| %>
       <%= f.input :name, { class: "label-dark" }%>
       <%= f.input :description %>
       <%= f.input :address %>

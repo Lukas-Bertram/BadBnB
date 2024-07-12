@@ -17,8 +17,15 @@ class OffersController < ApplicationController
   def create
     @offer = Offer.new(offer_params)
     @offer.user = current_user
+
+    if params[:offer][:image_url].present?
+      uploaded_file = params[:offer][:image_url]
+      cloudinary_file = Cloudinary::Uploader.upload(uploaded_file.path)
+      @offer.image_url = cloudinary_file['url']
+    end
+
     if @offer.save
-      redirect_to offer_path(@offer)
+      redirect_to offer_path(@offer), notice: 'Offer was successfully created.'
     else
       render :new
     end

@@ -1,6 +1,10 @@
 <div class="show">
   <h1><%= @offer.name %></h1>
-  <%= cl_image_tag @offer.image_url.key, height: 300, width: 400, crop: :fill %>
+    <% if @offer.image_url && @offer.image_url.key %>
+    <%= cl_image_tag @offer.image_url.key, height: 300, width: 400, crop: :fill %>
+  <% else %>
+    <p>No image available</p>
+  <% end %>
   <p><%= @offer.description %></p>
   <p><%= @offer.address %></p>
   <% if @offer.availability == true %>
@@ -12,11 +16,9 @@
   <button class="btn">
     <%= link_to "Book now!", new_offer_booking_path(@offer) %>
   </button>
-
 </div>
 
-
-  <div class="show">
+<div class="show">
     <% if @offer.user == current_user %>
       <%= link_to "Delete",
       offer_path(@offer),
@@ -24,4 +26,4 @@
       <%= link_to "Update",
       edit_offer_path(@offer)%>
     <% end %>
-  </div>
+</div>

@@ -8,10 +8,18 @@
     <ul class="cards-ul">
       <% @offers.each do |offer| %>
       <div class="card-model">
-        <li><%= link_to offer.name, offer_path(offer), {:style =>'text-decoration:none;'} %></li>
+        <li>
+          <h3><%= link_to offer.name, offer_path(offer), class: "card-name" %></h3>
+          <div>
+            <% if offer.image_url.attached? %>
+            <%= cl_image_tag offer.image_url.key, class: "card-image", height: 110,  crop: :fill %>
+            <% else %>
+            <%= image_tag "train.jpg", alt: "train", width: 200 %>
+            <% end %>
+            </div>
+          <%= link_to offer.price, offer_path(offer), class: "card-price" %>
+        </li>
       </div>
       <% end %>
     </ul>
   </div>
-
-  
