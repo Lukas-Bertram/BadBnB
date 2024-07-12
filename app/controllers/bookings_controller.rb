@@ -1,8 +1,12 @@
 class BookingsController < ApplicationController
-  before_action :set_offer, only: %i[new create index]
+  before_action :set_offer, only: %i[new create]
 
   def index
-    @bookings = Booking.all
+    # Offers that the current user has made and have been booked by others
+    @my_offers_booked_by_others = current_user.offers.joins(:bookings).distinct
+
+    # Offers that the current user has booked
+    @my_booked_offers = current_user.bookings.includes(:offer).map(&:offer)
   end
 
   def new
@@ -14,7 +18,7 @@ class BookingsController < ApplicationController
     @booking.offer = @offer
     @booking.user = current_user
     if @booking.save
-      redirect_to pages_path
+      redirect_to pages_path, notice: 'Booking was successful!'
     else
       render :new
     end
@@ -22,7 +26,7 @@ class BookingsController < ApplicationController
 
   def show
   end
-  
+
   private
 
   def set_offer

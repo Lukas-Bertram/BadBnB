@@ -138,10 +138,17 @@ form input {
   margin-bottom: 10px;
 }
 
+.cards {
+  background: rgb(25,28,31);
+  background: linear-gradient(47deg, rgba(25,28,31,1) 42%,
+  rgba(179,179,179,1) 100%);
+}
+  
 .cards-holder {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
 }
 
 .navbar-brand {
@@ -152,6 +159,53 @@ form input {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.cards-ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  row-gap: 15px;
+  padding: 3rem;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 10px;
+  background: rgb(25,28,31);
+  background: linear-gradient(47deg, rgba(25,28,31,1) 42%,
+  rgba(179,179,179,1) 100%);
+}
+
+.grid-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cards-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-flow: row;
+  row-gap: 15px;
+  padding: 1rem;
+}
+
+.card-model-small {
+  background-color: transparent;
+  border-radius: 1px solid #626262;
+  width: 12rem;
+  height: 12rem;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px,
+  rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px,
+  rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  border: 1px solid #626262;
 }
 
 .card-model {
@@ -190,11 +244,21 @@ form input {
   padding: 5px;
 }
 
+
+.card-text {
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  text-shadow: 1px 1px 2px #000;
+  padding: 5px;
+}
+
 .card-name:hover {
   font-family: "Honk", system-ui;
   font-size: 30px;
   text-shadow: 1px 1px #000;
   transition: 0.5s ease;
+
 }
 
 .card-image {

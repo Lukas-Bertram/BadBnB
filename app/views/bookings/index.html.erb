@@ -1,0 +1,65 @@
+<div class="index">
+  <div class="banner">
+  <h1>My bookings</h1>
+  </div>
+</div>
+
+<div class="grid-container">
+  <div class="grid-column"> <%#=A start %>
+    <div><h2>My booked offers</h2></div> <%#=A.1 start  and end, class=text-section%>
+    <ul class="cards-section"> <%#=A.2 start%>
+      <% if @my_offers_booked_by_others.any? %>
+          <% @my_offers_booked_by_others.each do |offer| %>
+            <div class="card-model">
+              <li>
+                <h3 class="card-name"><%= offer.name %></h3>
+                <div>
+                  <% if offer.photo.attached? %>
+                  <%= cl_image_tag offer.photo.key, class: "card-image", height: 110,  crop: :fill %>
+                  <% else %>
+                  <%= image_tag "train.jpg", alt: "train", width: 200 %>
+                  <% end %>
+                </div>
+                <div class="card-text">
+                Booked by:
+                <ul>
+                  <% offer.bookings.each do |booking| %>
+                    <li><%= booking.user.email %></li>
+                    <li>from <%= booking.check_in.strftime("%B %d, %Y") %></li>
+                    <li>to <%= booking.check_out.strftime("%B %d, %Y") %></li>
+                  <% end %>
+                </ul>
+                </div>
+              </li>
+            </div>
+          <% end %>
+      <% else %>
+        <p>No one is interested in your bad experience yet</p>
+      <% end %>
+    </ul> <%#=A.2 end%>
+  </div> <%#=A end %>
+
+  <div class="grid-column">
+    <h2>Offers I booked</h2>
+    <ul class="cards-section">
+      <% if @my_booked_offers.any? %>
+          <% @my_booked_offers.each do |offer| %>
+          <div class="card-model">
+            <li><h3 class="card-name"><%= offer.name %></h3>
+            <div>
+              <% if offer.photo.attached? %>
+              <%= cl_image_tag offer.photo.key, class: "card-image", height: 110,  crop: :fill %>
+              <% else %>
+              <%= image_tag "train.jpg", alt: "train", width: 200 %>
+              <% end %>
+            </div>
+            </li>
+          </div>
+          <% end %>
+      <% else %>
+      <p>You are not interested in any bad experience yet.</p>
+    <% end %>
+    </ul>
+  </div>
+
+</div>
