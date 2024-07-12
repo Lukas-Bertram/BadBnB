@@ -183,9 +183,6 @@ form input {
   grid-template-columns: 1fr 1fr;
   gap: 10px;
   padding: 10px;
-  background: rgb(25,28,31);
-  background: linear-gradient(47deg, rgba(25,28,31,1) 42%,
-  rgba(179,179,179,1) 100%);
 }
 
 .grid-column {
@@ -424,4 +421,39 @@ li {
 
 footer h3 {
   margin-left: 40px;
+}
+
+
+.booking-index {
+  background: rgb(25,28,31);
+  background: linear-gradient(47deg, rgba(25,28,31,1) 42%,
+  rgba(179,179,179,1) 100%);
+}
+
+.booking-index h1 {
+  font-family: "Honk", system-ui;
+  font-size: 35px;
+}
+
+.booking-modelcard {
+  padding: 10px;
+  border: 1px solid#626262;
+  border-radius: 12px;
+  box-shadow: 2px 2px 4px #212121;
+}
+
+.booking-modelcard:hover {
+  background: rgb(253,255,132);
+  background: linear-gradient(183deg, rgba(253,255,132,0.6699054621848739) 0%,
+  rgba(253,126,74,0.7791491596638656) 33%,
+  rgba(251,26,159,0.5662640056022409) 100%);
+  padding: 15px;
+  transition: 0.5s ease;
+}
+
+.booking-text li {
+  font-size: 18px;
+  font-weight: 100;
+  text-align: center;
+  padding: 6px;
 }
