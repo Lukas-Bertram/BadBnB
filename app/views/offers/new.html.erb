@@ -4,7 +4,9 @@
   <div class="new-offer">
     <%= simple_form_for @offer, html: { multipart: true } do |f| %>
       <%= f.input :name, { class: "label-dark" }%>
-      <%= f.input :description %>
+      <div>
+        <%= f.input :description, { class: 'new-description' } %>
+      </div>
       <%= f.input :address %>
       <%= f.input :price %>
       <%= f.input :photo, as: :file %>
