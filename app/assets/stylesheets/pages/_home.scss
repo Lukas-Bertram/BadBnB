@@ -167,12 +167,31 @@ form input {
   border: 1px solid #626262;
 }
 
+.card-model:hover {
+  background: rgb(253,255,132);
+  background: linear-gradient(183deg, rgba(253,255,132,0.6699054621848739) 0%,
+  rgba(253,126,74,0.7791491596638656) 33%,
+  rgba(251,26,159,0.5662640056022409) 100%);
+  width: 18rem;
+  height: 17rem;
+  border: 2px solid #fff;
+  box-shadow: 4px 4px 8px #fff;
+  transition: 1s ease;
+}
+
 .card-name {
   color: #fff;
   text-decoration: none;
   font-size: 20px;
   text-shadow: 1px 1px 2px #000;
   padding: 5px;
+}
+
+.card-name:hover {
+  font-family: "Honk", system-ui;
+  font-size: 30px;
+  text-shadow: 1px 1px #000;
+  transition: 0.5s ease;
 }
 
 .card-image {
