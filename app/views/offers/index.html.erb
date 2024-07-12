@@ -11,8 +11,6 @@
         <li>
           <h3><%= link_to offer.name, offer_path(offer), class: "card-name" %></h3>
           <div>
-
-            <% if offer.image_url.attached? %>
             <% if offer.photo.attached? %>
 
             <%= cl_image_tag offer.photo.key, class: "card-image", height: 110,  crop: :fill %>
