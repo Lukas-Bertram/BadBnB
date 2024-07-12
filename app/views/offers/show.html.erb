@@ -2,20 +2,22 @@
   <div class="card-show">
   <h1><%= @offer.name %></h1>
     <% if @offer.photo && @offer.photo.key %>
-    <%= cl_image_tag @offer.photo.key, class: "card-image", crop: :fill %>
+    <%= cl_image_tag @offer.photo.key, class: "show-image", crop: :fill %>
   <% else %>
     <%= image_tag "train.jpg", alt: "train", width: 200 %>
   <% end %>
   <p><%= @offer.description %></p>
+  <h2>Location:</h2>
   <p><%= @offer.address %></p>
+  <p class="show-price"><%= @offer.price %> €</p>
   <% if @offer.availability == true %>
     <p><%= @offer.name %> is available!</p>
   <% else %>
-    <p><%= @offer.name %> is currently not available</p>
+    <p><%= @offer.name %> is not available</p>
   <% end %>
 
   <button class="btn">
-    <%= link_to "Book now!", new_offer_booking_path(@offer) %>
+    <%= link_to "Book now!", new_offer_booking_path(@offer), class: "button-home" %>
   </button>
 
 
@@ -23,9 +25,9 @@
     <% if @offer.user == current_user %>
       <%= link_to "Delete",
       offer_path(@offer),
-      data: {turbo_method: :delete, turbo_confirm: "This offer is horrible. Are you sure that you want to delete?"}%>
+      data: {turbo_method: :delete, turbo_confirm: "This offer is horrible. Are you sure that you want to delete?"}, class: "show-delete"%>
       <%= link_to "Update",
-      edit_offer_path(@offer)%>
+      edit_offer_path(@offer), class: "show-delete"%>
     <% end %>
   </div>
   </div>
