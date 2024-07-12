@@ -11,4 +11,5 @@ class PagesController < ApplicationController
     # Offers that the current user has booked
     @my_booked_offers = current_user.bookings.includes(:offer).map(&:offer)
   end
+
 end
