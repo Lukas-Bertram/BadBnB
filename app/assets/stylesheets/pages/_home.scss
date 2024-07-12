@@ -380,7 +380,7 @@ li {
   font-weight: 100;
   text-decoration: none;
   margin-right: 10px;
-
+  padding-bottom: 10px;
 }
 
 .show-delete:hover {
@@ -391,4 +391,17 @@ li {
 
 .btn-search {
   padding: 25px;
+}
+
+.nav li {
+  font-family: "Bungee", sans-serif;
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+}
+
+footer h3 {
+  margin-left: 40px;
 }
