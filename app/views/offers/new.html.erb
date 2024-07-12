@@ -5,7 +5,7 @@
     <%= simple_form_for @offer, html: { multipart: true } do |f| %>
       <%= f.input :name, { class: "label-dark" }%>
       <div>
-        <%= f.input :description, { class: 'new-description' } %>
+        <%= f.input :description, as: :text, :input_html => { 'rows' => 20, 'cols' => 10 } %>
       </div>
       <%= f.input :address %>
       <%= f.input :price %>
