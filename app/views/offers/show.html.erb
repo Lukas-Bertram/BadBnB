@@ -7,7 +7,7 @@
     <%= image_tag "train.jpg", alt: "train", width: 200 %>
   <% end %>
   <p><%= @offer.description %></p>
-  <p><%= @offer.address %></p>
+  <p>Address: <%= @offer.address %></p>
   <% if @offer.availability == true %>
     <p><%= @offer.name %> is available!</p>
   <% else %>
