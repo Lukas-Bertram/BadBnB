@@ -1,8 +1,12 @@
 class BookingsController < ApplicationController
-  before_action :set_offer, only: %i[new create index]
+  before_action :set_offer, only: %i[new create]
 
   def index
-    @bookings = Booking.all
+    # Offers that the current user has made and have been booked by others
+    @my_offers_booked_by_others = current_user.offers.joins(:bookings).distinct
+
+    # Offers that the current user has booked
+    @my_booked_offers = current_user.bookings.includes(:offer).map(&:offer)
   end
 
   def new
